@@ -39,10 +39,9 @@
         android:id="@+id/loginUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textoLogin"
+        app:layout_constraintTop_toBottomOf="@+id/textoLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/loginhGLH1"
         app:startIconDrawable="@drawable/baseline_person_24"
        >
         <EditText

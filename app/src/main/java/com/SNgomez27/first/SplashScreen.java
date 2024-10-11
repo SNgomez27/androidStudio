@@ -1,7 +1,10 @@
 package com.SNgomez27.first;
 import static com.bumptech.glide.load.resource.bitmap.TransformationUtils.centerCrop;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -28,7 +31,7 @@ public class SplashScreen extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+            goToMain();
         Animation gradientColours = AnimationUtils.loadAnimation(this, R.anim.gradient_colour);
         ImageView splashLogo = findViewById(R.id.logoSplash);
         TextView textoSplash = findViewById(R.id.textoSplash);
@@ -40,5 +43,16 @@ public class SplashScreen extends AppCompatActivity {
                 .transition(DrawableTransitionOptions.withCrossFade(1000))
                 .centerCrop()
                 .into(glideBackground);
+    }
+    public void goToMain(){
+        new Handler(Looper.myLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run(){
+                Intent  intent  = new Intent(SplashScreen.this, Login.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        } ,3000);
     }
 }

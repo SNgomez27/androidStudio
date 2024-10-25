@@ -5,21 +5,21 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".register">
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/loginhGLH1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10"
+        app:layout_constraintGuide_percent="0.05
+"
         />
     <androidx.constraintlayout.widget.Guideline
-    android:id="@+id/loginhGLH2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintGuide_percent="0.05"
-    />
+        android:id="@+id/loginhGLH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"
+        />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/loginhGLH3"
         android:layout_width="wrap_content"
@@ -34,10 +34,8 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.33"
         />
-
-
     <ImageView
-        android:id="@+id/logoLogin"
+        android:id="@+id/logoregister"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/logo_bota"
@@ -47,42 +45,44 @@
         app:layout_constraintTop_toTopOf="@id/loginhGLH1" />
 
     <TextView
-        android:id="@+id/textoLogin"
+        android:id="@+id/textoregister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="40dp"
-        app:layout_constraintTop_toBottomOf="@id/logoLogin"
+        android:textSize="30dp"
+        app:layout_constraintTop_toBottomOf="@id/logoregister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/romansd"
         />
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginUsername"
+        android:id="@+id/registerUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/textoLogin"
+        app:layout_constraintTop_toBottomOf="@+id/textoregister"
         app:layout_constraintStart_toStartOf="@id/loginhGLH2"
         app:layout_constraintEnd_toEndOf="@id/loginhGLH3"
         app:startIconDrawable="@drawable/baseline_person_24"
+        android:layout_marginTop="15dp"
 
-       >
-
+        >
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Usuario"
+            android:hint="Nombre de usuario"
             android:inputType="textPersonName"
-            android:paddingStart="45dp" />
+            android:paddingStart="45dp"
+            />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginContra"
+        android:id="@+id/registerContra"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/loginUsername"
+        app:layout_constraintTop_toBottomOf="@+id/registerUsername"
         app:layout_constraintStart_toStartOf="@id/loginhGLH2"
         app:layout_constraintEnd_toEndOf="@id/loginhGLH3"
         app:startIconDrawable="@drawable/baseline_person_24"
+        android:layout_marginTop="15dp"
 
         >
         <EditText
@@ -90,35 +90,43 @@
             android:layout_height="match_parent"
             android:hint="Contraseña"
             android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="73dp"
             android:paddingStart="45dp"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
-    <Button
-        android:id="@+id/botonLogin"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@id/loginContra"
-        app:layout_constraintStart_toStartOf="@id/loginhGLH4"
-        android:layout_marginTop="20dp"
-        android:hint="Login"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/material_dynamic_primary20"
-        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/registerContraRepit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/loginContra"
+        app:layout_constraintStart_toStartOf="@id/loginhGLH2"
+        app:layout_constraintEnd_toEndOf="@id/loginhGLH3"
+        app:startIconDrawable="@drawable/baseline_person_24"
+        android:layout_marginTop="15dp"
+
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Repetir contraseña"
+            android:inputType="textPersonName"
+
+            android:paddingStart="45dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/botonRegist"
         android:layout_width="140dp"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@id/botonLogin"
+        app:layout_constraintTop_toBottomOf="@id/registerContraRepit"
         app:layout_constraintStart_toStartOf="@id/loginhGLH4"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:hint="Register"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/material_dynamic_primary20"
         />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
